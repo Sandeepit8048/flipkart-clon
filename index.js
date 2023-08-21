@@ -1,31 +1,3 @@
-let slides = document.querySelectorAll(".slide")
-let about=document.getElementById("about");
-let counter = 0;
-console.log(slides);
-slides.forEach(function (slide, index)
- { 
-    slide.style.left = `${index * 100}%`
- }
-)
-
-function slideImage(counter) {
-    slides.forEach(function (slide)
-     { 
-        slide.style.transform = `translateX(${counter * 100+100}%)`
-     }
-    )
-}
-function gonext() {
-    // console.log(slides);
-    counter++;
-    // alert();
-    slideImage(counter)
-}
-function goprev() {
-    counter--;
-    // alert();
-    slideImage(counter)
-}
 
 
 const prev = document.querySelector("#prev");
@@ -90,3 +62,68 @@ function mediaManagement() {
 }
     
 
+
+
+// Carousel Auto-Cycle
+
+
+const prev1 = document.querySelector("#prev1");
+const next1 = document.querySelector("#next1");
+
+let carouselVp1 = document.querySelector("#carousel-vp1");
+
+let cCarouselInner1 = document.querySelector("#cCarousel-inner1");
+let carouselInnerWidth1 = cCarouselInner.getBoundingClientRect().width;
+
+let leftValue1 = 0;
+
+// Variable used to set the carousel movement value (card's width + gap)
+const totalMovementSize1 =
+  parseFloat(
+    document.querySelector(".cCarousel-item1").getBoundingClientRect().width,
+    10
+  ) +
+  parseFloat(
+    window.getComputedStyle(cCarouselInner1).getPropertyValue("gap"),
+    10
+  );
+
+prev1.addEventListener("click", () => {
+  if (!leftValue == 0) {
+    leftValue -= -totalMovementSize;
+    cCarouselInner1.style.left = leftValue + "px";
+  }
+});
+
+next1.addEventListener("click", () => {
+  const carouselVpWidth1 = carouselVp1.getBoundingClientRect().width;
+  if (carouselInnerWidth - Math.abs(leftValue) > carouselVpWidth1) {
+    leftValue -= totalMovementSize;
+    cCarouselInner1.style.left = leftValue + "px";
+  }
+});
+
+const mediaQuery5101 = window.matchMedia("(max-width: 510px)");
+const mediaQuery7701 = window.matchMedia("(max-width: 770px)");
+
+mediaQuery5101.addEventListener("change", mediaManagement);
+mediaQuery7701.addEventListener("change", mediaManagement);
+
+let oldViewportWidth1 = window.innerWidth;
+
+function mediaManagement() {
+  const newViewportWidth = window.innerWidth;
+
+  if (leftValue <= -totalMovementSize && oldViewportWidth1 < newViewportWidth) {
+    leftValue += totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+    oldViewportWidth1 = newViewportWidth;
+  } else if (
+    leftValue <= -totalMovementSize &&
+    oldViewportWidth1 > newViewportWidth
+  ) {
+    leftValue -= totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+    oldViewportWidth1 = newViewportWidth;
+  }
+}

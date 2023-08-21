@@ -131,3 +131,119 @@ body {
 #img1{
   width: 189px;
 }
+.cd{
+  position: relative !important;
+  width: 18rem;
+   margin-top: -24%;
+    height: 18rem;
+}
+@media screen and (max-width:1200px) {
+  .cd{
+    top: 1rem;
+    margin: auto;
+
+  }
+
+}
+
+
+
+/* carousel secand */
+
+
+#cCarousel1 {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+#cCarousel1 .arrow1 {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+  font-size: 26px;
+  color: white;
+  background: #00000072;
+  cursor: pointer;
+}
+
+#cCarousel1 #prev1 {
+  left: 0px;
+}
+
+#cCarousel1 #next1 {
+  right: 0px;
+}
+
+#carousel-vp1 {
+  width: 770px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+@media (max-width: 770px) {
+  #carousel-vp1 {
+    width: 510px;
+  }
+}
+
+@media (max-width: 510px) {
+  #carousel-vp1 {
+    width: 250px;
+  }
+}
+
+#cCarousel1 #cCarousel-inner1 {
+  display: flex;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  gap: 10px;
+  left: 0px;
+}
+
+.cCarousel-item1 {
+  width: 250px;
+  height: 365px;
+  border: 2px solid white;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cCarousel-item1 img {
+  width: 100%;
+  object-fit: cover;
+  /* min-height: 246px; */
+  color: white;
+}
+
+.cCarousel-item1 .infos {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: white;
+  color: black;
+}
+
+.cCarousel-item1 .infos button {
+  background: #222;
+  padding: 10px 30px;
+  border-radius: 15px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
