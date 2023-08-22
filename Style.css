@@ -129,7 +129,8 @@ body {
   /* height: 250px; */
 }
 #img1{
-  width: 189px;
+  width: 146px;
+
 }
 .cd{
   position: relative !important;
@@ -137,11 +138,35 @@ body {
    margin-top: -24%;
     height: 18rem;
 }
+.cd1{
+  position: relative!important;
+  width: 18rem;
+   margin-top: -18%; 
+    height: 18rem;
+    float: right !important;
+}
+.cd2{
+  
+    position: relative!important;
+    width: 18rem;
+     margin-top: -360px !important;
+      height: 18rem;
+      float: right !important;
+ 
+}
+
 @media screen and (max-width:1200px) {
   .cd{
     top: 1rem;
     margin: auto;
 
+  }
+  .cd1{
+    display: none !important ;
+   
+  }
+  .cd2{
+    display: none !important;
   }
 
 }
@@ -212,7 +237,7 @@ body {
 }
 
 .cCarousel-item1 {
-  width: 250px;
+  width: 251px;
   height: 365px;
   border: 2px solid white;
   border-radius: 15px;
@@ -223,8 +248,8 @@ body {
 
 .cCarousel-item1 img {
   width: 100%;
-  object-fit: cover;
-  /* min-height: 246px; */
+  /* object-fit: cover; */
+  min-height: 256px;
   color: white;
 }
 
