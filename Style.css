@@ -8,7 +8,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background: #222;
-  margin-top: 2rem !important;
+  /* margin-top: 2rem !important; */
 }
 
 @media screen and (max-width:700px) {
