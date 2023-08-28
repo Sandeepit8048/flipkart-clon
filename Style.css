@@ -401,6 +401,7 @@ body {
   color: #454545 !important;
   overflow: hidden;
 }
-.footerbx{
-  /* flex-direction: column !important; */
+.footerboxes{
+ font-weight: 500;
+ font-family: Arial;
 }
